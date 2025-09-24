@@ -2,7 +2,13 @@ import { memo } from "react";
 import product from "@/shared/assets/product.png";
 import { IoCartOutline } from "react-icons/io5";
 import { Categories } from "@/entites";
-import { FaHeart } from "react-icons/fa";
+// import { FaHeart } from "react-icons/fa";
+{/* <button
+  className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center
+                         rounded-full bg-white border border-gray-200 shadow hover:shadow-md transition"
+>
+  <FaHeart className="text-orange-500 text-[20px]" />
+</button>; */}
 
 export const Products = memo(() => {
   const cards = Array(6).fill({
@@ -31,12 +37,7 @@ export const Products = memo(() => {
             key={i}
             className="w-full border-2 border-gray-200 rounded-[12px] p-7 hover:shadow-md transition"
           >
-            <button
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center
-                         rounded-full bg-white border border-gray-200 shadow hover:shadow-md transition"
-            >
-              <FaHeart className="text-orange-500 text-[20px]" />
-            </button>
+            
             <img
               className="w-[294px] h-[294px] object-cover mx-auto rounded-[12px] mb-7"
               src={item.img}
