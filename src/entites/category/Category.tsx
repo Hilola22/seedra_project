@@ -21,23 +21,25 @@ export const Categories = memo(() => {
   const [active, setActive] = useState("All");
 
   return (
-    <div className="container mx-auto my-12">
-      <div className="flex flex-wrap justify-center gap-4">
-        {categories.map((cat) => (
-          <button
-            key={cat.name}
-            onClick={() => setActive(cat.name)}
-            className={`flex items-center gap-2 px-7 py-3 rounded-[8px] border-2 text-[15px] transition
-              ${
-                active === cat.name
-                  ? "bg-green-600 text-white border-green-700 shadow-md"
-                  : "border-gray-300 text-gray-700 hover:border-green-500 hover:text-green-500"
-              }`}
-          >
-            <img src={cat.icon} alt={cat.name} className="w-5 h-5" />
-            {cat.name}
-          </button>
-        ))}
+    <div className="container mx-auto my-12 overflow-x-hidden">
+      <div className="overflow-x-auto hide-scrollbar -mx-4 px-4">
+        <div className="flex gap-4 py-2 flex-nowrap">
+          {categories.map((cat) => (
+            <button
+              key={cat.name}
+              onClick={() => setActive(cat.name)}
+              className={`flex items-center gap-2 px-7 py-3 rounded-[8px] border-2 text-[15px] transition flex-shrink-0
+                ${
+                  active === cat.name
+                    ? "bg-green-600 text-white border-green-700 shadow-md"
+                    : "border-gray-300 text-gray-700 hover:border-green-500 hover:text-green-500"
+                }`}
+            >
+              <img src={cat.icon} alt={cat.name} className="w-5 h-5" />
+              <span>{cat.name}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
